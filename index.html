@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Etch-A-Sketch</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h2 id="header">Etch-A-Sketch</h2>
+        
+        <div id="holder">
+                <button id="reset">Reset Canvas</button>
+                <input id="size-select" placeholder="Enter size of each side (Press 'Enter' to reset, max 150)" onkeydown="setInputSize(this)"></input>
+                <select id="color-options" onchange="changeColorScheme()">
+                    <option>--Color Scheme--</option>
+                    <option id="black">Black</option>
+                    <option id="random">Random Colors</option>
+                    <option id="black-gradient">Black Shade</option>
+                </select>
+
+        </div>
+
+        <div id="container"></div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
