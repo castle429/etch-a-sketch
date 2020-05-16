@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to right bottom, #2193b0, #6dd5ed) fixed;
+}
+
+#header {
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+#container {
+    background: lightgray;
+
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 780px;
+    height: 780px;
+    font-size: 0;
+}
+
+
+#inner-div {
+    display: inline-block;
+    vertical-align: top;
+    vertical-align: bottom;
+}
+
+#size-select {
+    width: 375px;
+}
+
+#holder {
+    display: flex;
+    justify-content: space-between;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
