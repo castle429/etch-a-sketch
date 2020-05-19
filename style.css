@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(to right bottom, #2193b0, #6dd5ed) fixed;
+    width: 100%;
 }
 
 #header {
