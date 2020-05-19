@@ -6,28 +6,34 @@ let blackOpacity = 0.02;
 
 
 function createGrid(numBlocks) {
-    for(let i = 0; i < numBlocks ** 2; i++) {
-        innerDiv = document.createElement('div');
-        innerDiv.style.width = container.offsetWidth / numBlocks + "px";
-        innerDiv.style.height =  container.offsetHeight / numBlocks + "px";
-        innerDiv.setAttribute("id", "inner-div");
-        innerDiv.addEventListener("mouseover", function(e) {
-            if(colorScheme == "Random Colors") {
-                e.target.style.background = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            }
-            else if(colorScheme == "Black Shade") {
-                e.target.style.background = "black";
-                e.target.style.opacity = blackOpacity;
-                blackOpacity += 0.02;
-            }
-            else {
-                e.target.style.background = "black";
-            }
+    if(numBlocks > 80 || numBlocks < 1) {
+        alert("Please enter a number from 1 to 80");
+        createGrid(16);
+    }
+    else {
+        for(let i = 0; i < numBlocks ** 2; i++) {
+            innerDiv = document.createElement('div');
+            innerDiv.style.width = container.offsetWidth / numBlocks + "px";
+            innerDiv.style.height =  container.offsetHeight / numBlocks + "px";
+            innerDiv.setAttribute("id", "inner-div");
+            innerDiv.addEventListener("mouseover", function(e) {
+                if(colorScheme == "Random Colors") {
+                    e.target.style.background = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                }
+                else if(colorScheme == "Black Shade") {
+                    e.target.style.background = "black";
+                    e.target.style.opacity = blackOpacity;
+                    blackOpacity += 0.02;
+                }
+                else {
+                    e.target.style.background = "black";
+                }
 
-        });
+            });
 
-        container.appendChild(innerDiv);
+            container.appendChild(innerDiv);
 
+        }
     }
 }
 
@@ -45,11 +51,17 @@ function getSizeInput() {
 
 function setInputSize(element) {
     if(event.key == 'Enter') {
-        if(Number.isInteger(Number.parseInt(element.value))) {
+        let size = Number.isInteger(Number.parseInt(element.value));
+
+        if(size < 80 && size >= 1) {
             blackOpacity = 0.02;
             container.textContent = '';
             createGrid(element.value);
             element.value = '';
+        }
+        if (size == 0) {
+            console.log("Please input a number between 1 and 80");
+            createGrid(10);
         }
     }
 }
