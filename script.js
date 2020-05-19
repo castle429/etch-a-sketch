@@ -8,8 +8,8 @@ let blackOpacity = 0.02;
 function createGrid(numBlocks) {
     for(let i = 0; i < numBlocks ** 2; i++) {
         innerDiv = document.createElement('div');
-        innerDiv.style.width = 780 / numBlocks + "px";
-        innerDiv.style.height = 780 / numBlocks + "px";
+        innerDiv.style.width = 600 / numBlocks + "px";
+        innerDiv.style.height = 600 / numBlocks + "px";
         innerDiv.setAttribute("id", "inner-div");
         innerDiv.addEventListener("mouseover", function(e) {
             if(colorScheme == "Random Colors") {
