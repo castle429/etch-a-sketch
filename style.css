@@ -11,8 +11,8 @@ body {
 #container {
     background: lightgray;
 
-    position: absolute;
-    top: 40px;
+    position: relative;
+    top: 0px;
     bottom: 0;
     right: 0;
     left: 0;
