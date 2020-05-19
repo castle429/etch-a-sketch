@@ -6,8 +6,8 @@ let blackOpacity = 0.02;
 
 
 function createGrid(numBlocks) {
-    if(numBlocks > 80 || numBlocks < 1) {
-        alert("Please enter a number from 1 to 80");
+    if(numBlocks > 64 || numBlocks < 1) {
+        alert("Please enter a number from 1 to 64");
         createGrid(16);
     }
     else {
@@ -51,18 +51,16 @@ function getSizeInput() {
 
 function setInputSize(element) {
     if(event.key == 'Enter') {
-        let size = Number.isInteger(Number.parseInt(element.value));
-
-        if(size < 80 && size >= 1) {
-            blackOpacity = 0.02;
-            container.textContent = '';
+        blackOpacity = 0.02;
+        container.textContent = '';
+        if(Number.parseInt(element.value)) {
             createGrid(element.value);
-            element.value = '';
         }
-        if (size == 0) {
-            console.log("Please input a number between 1 and 80");
-            createGrid(10);
+        else {
+            alert("Must enter a number");
+            createGrid(16);
         }
+        element.value = '';
     }
 }
 
